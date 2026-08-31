@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tokens &amp; Programs Assignment — Derriek Xavier</title>
+<title>Tokens &amp; Programs Assignment - Derriek Xavier</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
     <div class="wrap">
       <div class="breadcrumb"><a href="../index.html">Work</a> / Tokens &amp; Programs</div>
       <h1>Tokens &amp; Programs Assignment</h1>
-      <p class="dek">An internal Lenador tool built to answer two operational questions at once: which users currently hold an active token, and which cultural/educational programs are running and when — with the two views searchable and cross-referenced.</p>
+      <p class="dek">An internal Lenador tool that answers two questions at once: which users currently hold an active token, and which cultural or educational programs are running and when.</p>
 
       <div class="pill-row">
         <span class="pill">Bilingual Reporting (AR/EN)</span>
@@ -47,38 +47,38 @@
   <section class="proj-section">
     <div class="wrap prose">
       <h2>The operational problem</h2>
-      <p>Lenador runs a token-based access system tied to a catalogue of cultural and educational programs. Before this report, checking whether a specific user had an active token — or which programs had been recommended to them — meant querying the underlying tables directly. This tool puts both views in front of a non-technical operator, searchable by name.</p>
+      <p>Lenador runs a token-based access system tied to a catalogue of cultural and educational programs. Before this report, checking whether a user had an active token, or which programs had been recommended to them, meant querying the tables directly. This tool puts both views in front of a non-technical operator, searchable by name.</p>
     </div>
   </section>
 
   <section class="proj-section">
     <div class="wrap">
       <h2>User Overview</h2>
-      <p class="prose">A per-user token status table, paired with a searchable name filter and a list of programs recommended to each user — so a support operator can look up one person and immediately see both their access status and what's been recommended to them.</p>
+      <p class="prose">A per-user token status table, paired with a searchable name filter and a list of programs recommended to each user, so an operator can look someone up and see their access status and recommendations at the same time.</p>
 
       <figure>
         <img src="../assets/images/tokens-1.png" alt="User Overview page showing a user token check table with Has Token / No Token status, a searchable user name list, and a programs recommended to users list">
-        <figcaption>User Overview — user token check table, searchable name filter, and programs recommended per user</figcaption>
+        <figcaption>User Overview: token check table, searchable name filter, and programs recommended per user</figcaption>
       </figure>
 
-      <p class="prose">The design choice here was to keep the token-status table and the search filter visually adjacent, so an operator searching for a name sees the result and the underlying status table update together rather than needing to cross-reference a second page.</p>
+      <p class="prose">The token status table and search filter sit next to each other so an operator searching for a name sees the result update right there, instead of jumping between pages.</p>
     </div>
   </section>
 
   <section class="proj-section">
     <div class="wrap">
       <h2>Program Overview</h2>
-      <p class="prose">The catalogue side: what programs exist, in which category, and how they're scheduled — reported in both Arabic and English category names side by side, since the underlying program catalogue itself is bilingual.</p>
+      <p class="prose">The catalogue side: what programs exist, which category, and how they're scheduled, reported in Arabic and English side by side since the catalogue itself is bilingual.</p>
 
       <figure>
         <img src="../assets/images/tokens-2.png" alt="Program Overview page showing number of programs by Arabic and English category names, a searchable program name list, program status donut chart, and number of programs by day in June">
-        <figcaption>Program Overview — program count by category (Arabic and English), status split, and daily scheduling across June</figcaption>
+        <figcaption>Program Overview: program count by category (Arabic and English), status split, and daily scheduling across June</figcaption>
       </figure>
 
-      <p class="prose">Philosophy and Psychology, Literature, and Arts and Sports are the largest categories by program count. Of 99 total programs, 98 are active and 1 cancelled — a small enough number that the status split is more a sanity check than an analytical finding, but it's the kind of check that catches a data issue before it reaches an end user.</p>
+      <p class="prose">Philosophy and Psychology, Literature, and Arts and Sports are the biggest categories. Of 99 total programs, 98 are active and 1 cancelled, a small number, but the kind of check that catches a data issue before it reaches an end user.</p>
 
       <h3 class="prose">Why bilingual categories mattered</h3>
-      <p class="prose">Reporting Arabic and English category names as two parallel charts, rather than picking one, was a direct response to how the catalogue itself is maintained — bilingually, for a bilingual audience. Building the report around the data's actual structure rather than simplifying it down to one language kept the tool usable for the whole team.</p>
+      <p class="prose">Showing Arabic and English category names as two parallel charts, instead of picking one, matches how the catalogue is actually maintained. Building the report around the data's real structure instead of simplifying it down to one language kept the tool usable for the whole team.</p>
     </div>
   </section>
 
@@ -86,9 +86,9 @@
     <div class="wrap prose">
       <h2>What I'd extend next</h2>
       <ul>
-        <li>Add a date-range filter on the Program Overview page, beyond the current single-month view</li>
-        <li>Link token status directly to specific program recommendations, rather than listing them adjacently</li>
-        <li>Add a simple export/print view for operators who need an offline token-status snapshot</li>
+        <li>Add a date-range filter to the Program Overview page, beyond the current single-month view</li>
+        <li>Link token status directly to specific program recommendations, instead of listing them side by side</li>
+        <li>Add a simple export or print view for operators who need an offline token-status snapshot</li>
       </ul>
     </div>
   </section>
