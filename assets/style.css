@@ -164,7 +164,7 @@ footer.site-footer a { color: var(--ink-soft); }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background: var(--line-strong);
   border: 1px solid var(--line-strong);
@@ -354,6 +354,7 @@ figcaption {
   .proj-kpis { grid-template-columns: repeat(2, 1fr); }
   .proj-kpis div:nth-child(3) { border-left: none; }
   .two-col { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; }
   .hero, .project-list, .about-band, .proj-hero, .proj-section, footer.site-footer .wrap, .nav-between { padding-left: 20px; padding-right: 20px; }
 }
 
