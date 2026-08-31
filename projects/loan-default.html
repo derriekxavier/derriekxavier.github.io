@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Default Prediction - Derriek Xavier</title>
+
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://derriekxavier.github.io/projects/loan-default.html">
+<meta property="og:title" content="Loan Default Prediction - Derriek Xavier">
+<meta property="og:description" content="MSc dissertation building a leakage-free credit risk pipeline on Lending Club data, covering class imbalance, feature engineering, and SHAP interpretability.">
+<meta property="og:image" content="https://derriekxavier.github.io/assets/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Loan Default Prediction - Derriek Xavier">
+<meta name="twitter:description" content="MSc dissertation building a leakage-free credit risk pipeline on Lending Club data, covering class imbalance, feature engineering, and SHAP interpretability.">
+<meta name="twitter:image" content="https://derriekxavier.github.io/assets/og/og-image.png">
+
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <a href="../index.html" class="brand">Derriek Xavier</a>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="https://www.linkedin.com/in/derriekxavier/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:derriekx8@gmail.com">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="proj-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html">Work</a> / Loan Default Prediction</div>
+      <h1>Loan Default Prediction</h1>
+      <p class="dek">MSc dissertation building a credit risk model on Lending Club loan data from 2007 to 2018, using only information available before a lending decision is made. Awarded a Distinction.</p>
+
+      <div class="pill-row">
+        <span class="pill">Python</span>
+        <span class="pill">R</span>
+        <span class="pill">LightGBM / XGBoost</span>
+        <span class="pill">SMOTE-ENN</span>
+        <span class="pill">Cost-Sensitive Learning</span>
+        <span class="pill">SHAP</span>
+      </div>
+
+      <dl class="meta-row">
+        <div><dt>CONTEXT</dt><dd>MSc Data Science and Business Analytics, University of Plymouth</dd></div>
+        <div><dt>DATA</dt><dd>Lending Club loan records, 2007 to 2018, via Kaggle</dd></div>
+        <div><dt>FINAL MODEL</dt><dd>LightGBM with engineered features and cost-sensitive weighting</dd></div>
+      </dl>
+
+      <p style="margin-bottom:32px;"><a href="../assets/docs/derriek-xavier-dissertation.pdf">Download the full dissertation (PDF)</a></p>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap prose">
+      <h2>About the project</h2>
+      <p>Lenders need to estimate the chance a borrower will default before approving a loan. Many published models on this dataset report high accuracy figures, but do so by including information that only exists after a loan has been issued, such as repayment history. That inflates results and produces a model that cannot actually be used at the point of decision.</p>
+      <p>This project restricts the feature set to what is known at origination. The result is a lower headline score than much of the published work on this dataset, but one that reflects what the model could realistically achieve in deployment.</p>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap">
+      <h2>The data problem</h2>
+      <p class="prose">Two characteristics of the dataset shaped the whole approach: the classes are heavily imbalanced, and interest rate carries a strong signal that turns out to dominate the final model.</p>
+
+      <figure>
+        <img src="../assets/images/diss-imbalance.png" alt="Bar chart showing the count of non-default versus default loans, with non-defaults substantially outnumbering defaults">
+        <figcaption>Non-defaults heavily outnumber defaults, so a model that predicts "no default" every time still scores high on accuracy</figcaption>
+      </figure>
+
+      <p class="prose">This is why accuracy is the wrong metric here. An untuned Random Forest reached 80% accuracy while catching only 6% of actual defaults, which is useless to a lender. The work focused on recall, F1, and AUC instead.</p>
+
+      <figure>
+        <img src="../assets/images/diss-interest-rate.png" alt="Box plot comparing interest rate distribution between defaulted and non-defaulted loans, showing higher rates among defaults">
+        <figcaption>Interest rate by default status. Defaulted loans carry noticeably higher rates, since the platform's own pricing already encodes risk.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap">
+      <h2>Approach</h2>
+      <p class="prose">The work ran in four phases, each addressing a problem the previous phase exposed.</p>
+
+      <div class="two-col prose">
+        <div>
+          <h3>1. Baselines</h3>
+          <p>Logistic Regression with balanced class weights, and a default Random Forest. Logistic Regression handled the imbalance better out of the box. Random Forest scored well on accuracy but barely detected defaults at all.</p>
+
+          <h3>2. Resampling and threshold tuning</h3>
+          <p>SMOTE alone gave limited improvement. SMOTE-ENN, which combines oversampling with noise removal, worked better. Lowering the classification threshold from 0.50 down toward 0.25 raised recall substantially at the cost of precision.</p>
+        </div>
+        <div>
+          <h3>3. Boosting</h3>
+          <p>XGBoost and LightGBM reached similar results to the tuned Random Forest but needed less aggressive threshold adjustment. PCA was tested and made no meaningful difference, so it was dropped.</p>
+
+          <h3>4. Feature engineering and cost sensitivity</h3>
+          <p>Added temporal indicators, credit history aggregates, and a sentinel encoding with a missingness flag for delinquency recency. Cost-sensitive weighting was applied so misclassifying a defaulter carried a heavier penalty.</p>
+        </div>
+      </div>
+
+      <figure>
+        <img src="../assets/images/diss-threshold.png" alt="Line chart showing precision, recall, and F1 score across classification thresholds, with the best F1 threshold marked at 0.48">
+        <figcaption>Precision, recall, and F1 across classification thresholds. Moving the threshold trades one against the other, so the choice depends on how costly a missed default is relative to a false alarm.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap">
+      <h2>Results</h2>
+      <p class="prose">The final LightGBM model, using the enhanced feature set with cost-sensitive weighting, reached an F1 score of 0.44 and an AUC of 0.73. The gain in F1 over earlier models was modest, but the higher AUC showed better ranking ability, meaning the model ordered borrowers by risk more reliably even at a fixed threshold.</p>
+
+      <figure>
+        <img src="../assets/images/diss-roc.png" alt="ROC curves comparing Logistic Regression, Random Forest, XGBoost, LightGBM, and a stacking ensemble against random guessing">
+        <figcaption>ROC curves for the tuned models. LightGBM achieved the highest AUC; the stacking ensemble performed worse than its individual components.</figcaption>
+      </figure>
+
+      <p class="prose">The models sit close together, which is itself a finding. Once leakage is removed and only origination-time features remain, there is a ceiling on how much signal is available, and model choice matters less than the framing of the problem.</p>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap">
+      <h2>Temporal effects</h2>
+      <p class="prose">Default rates vary considerably by the year a loan was issued, peaking around the financial crisis and again in 2016 and 2017. Adding issue year as a feature let the model account for these cohort effects rather than treating all loans as if they came from the same conditions.</p>
+
+      <figure>
+        <img src="../assets/images/diss-default-year.png" alt="Line chart of default rate by loan issue year from 2007 to 2018, showing a peak in 2007, a dip around 2009, and a rise through 2016 and 2017">
+        <figcaption>Default rate by issue year. The variation across cohorts is large enough that ignoring it would leave real signal on the table.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap">
+      <h2>Interpretability</h2>
+      <p class="prose">Credit models are subject to regulatory explainability requirements, so a model that cannot justify its decisions is not deployable regardless of its scores. SHAP values were used to explain both overall model behaviour and individual predictions.</p>
+
+      <figure>
+        <img src="../assets/images/diss-shap.png" alt="SHAP summary plot ranking features by impact on model output, with interest rate, issue year, loan term, and average FICO score at the top">
+        <figcaption>SHAP feature impact summary. Interest rate, issue year, loan term, and average FICO score dominate. Positive values push the prediction toward default.</figcaption>
+      </figure>
+
+      <p class="prose">Higher interest rates and lower FICO scores pushed predictions toward default, while higher income and verified applications reduced predicted risk. These are the relationships a credit analyst would expect, which is a useful check that the model learned something sensible rather than an artefact of the data.</p>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap prose">
+      <h2>What I'd do differently</h2>
+      <ul>
+        <li>Test whether a model trained on earlier cohorts holds up on later ones, rather than using a random split, since the temporal variation in default rates suggests it might not</li>
+        <li>Frame the threshold choice around actual cost figures for a missed default versus a rejected good applicant, instead of optimising F1</li>
+        <li>Look at calibration rather than ranking alone, since a lender pricing risk needs the predicted probabilities to be meaningful, not just correctly ordered</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<nav class="nav-between">
+  <a href="tokens-programs.html">← Previous: Tokens &amp; Programs</a>
+  <a href="../index.html">Back to all projects →</a>
+</nav>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Derriek Xavier · Abu Dhabi / London</span>
+    <span><a href="https://www.linkedin.com/in/derriekxavier/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:derriekx8@gmail.com">derriekx8@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
