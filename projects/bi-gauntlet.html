@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BI Gauntlet: Financial Overview — Derriek Xavier</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <a href="../index.html" class="brand">Derriek Xavier</a>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="mailto:derriekx8@gmail.com">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="proj-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html">Work</a> / BI Gauntlet</div>
+      <h1>BI Gauntlet: Financial Overview</h1>
+      <p class="dek">A scored Power BI assignment set by my manager at Lenador Systems: build a single executive-grade financial overview page under real constraints — one page, no room for a weak measure to hide behind three others.</p>
+
+      <div class="pill-row">
+        <span class="pill">Metric Selector Pattern</span>
+        <span class="pill">Rolling Averages</span>
+        <span class="pill">YoY / LFL Growth</span>
+        <span class="pill">ABC Revenue Classification</span>
+        <span class="pill">Target Attainment</span>
+      </div>
+
+      <dl class="meta-row">
+        <div><dt>CONTEXT</dt><dd>Assignment set by manager, scored against a rubric</dd></div>
+        <div><dt>SCOPE</dt><dd>Single-page executive financial report</dd></div>
+        <div><dt>CURRENCY</dt><dd>Multi-currency, report-level currency toggle</dd></div>
+      </dl>
+    </div>
+
+    <div class="proj-kpis wrap" style="padding-left:0;padding-right:0;">
+      <div><span class="num">£28.60M</span><span class="label">Net Revenue</span></div>
+      <div><span class="num">77.6%</span><span class="label">Target Attainment</span></div>
+      <div><span class="num">32.2%</span><span class="label">Revenue YoY %</span></div>
+      <div><span class="num">2.0%</span><span class="label">Like-for-like Revenue YoY %</span></div>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap prose">
+      <h2>Why a single page is the harder brief</h2>
+      <p>A multi-page report can bury a weak measure behind three strong ones. One page can't. Everything visible here — the rolling average trend, the ABC split, the year-over-year movement, the target attainment — had to work individually and hold together as a set, because a reviewer scoring this page sees all of it at once.</p>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap">
+      <h2>The page</h2>
+      <figure>
+        <img src="../assets/images/gauntlet-1.png" alt="BI Gauntlet Financial Overview page showing Net Revenue, Attainment %, Revenue YoY %, LFL Revenue YoY %, a 28-day rolling revenue trend, Revenue by ABC class, Revenue YoY % by fiscal year, and Net Revenue vs Target by fiscal year">
+        <figcaption>Financial Overview — metric selector, 28-day rolling revenue trend, ABC revenue classification, and net revenue vs target by fiscal year</figcaption>
+      </figure>
+
+      <div class="two-col prose">
+        <div>
+          <h3>What's on it</h3>
+          <ul>
+            <li>A <strong>metric selector</strong> that switches the KPI card and trend line between Revenue YoY %, LFL Revenue YoY %, Net Revenue, and Attainment %</li>
+            <li>A <strong>28-day rolling average</strong> trend line, smoothing daily noise out of the revenue series without hiding the underlying shape</li>
+            <li><strong>ABC classification</strong> of revenue by class (A: 69.5%, B: 20.4%, C: 10.2% of revenue) — a Pareto-style view of where revenue concentration actually sits</li>
+            <li><strong>Net Revenue vs Target</strong> by fiscal year, alongside Revenue YoY % by fiscal year, so growth and attainment are read side by side rather than in isolation</li>
+          </ul>
+        </div>
+        <div>
+          <h3>The metric-selector technique</h3>
+          <p>A disconnected table lists the available metrics; a slicer against that table feeds a single measure that switches its calculation with <code>SWITCH</code> against the selected value. One visual, one measure, no duplicated pages per metric — the same pattern I reused and extended in the GulfCart build afterward.</p>
+        </div>
+      </div>
+
+      <h3 class="prose">Like-for-like vs headline growth</h3>
+      <p class="prose">Headline Revenue YoY sits at 32.2%, but LFL Revenue YoY — stripping out the effect of new stores or channels opened during the period — comes in at 2.0%. Reporting both on the same page, rather than just the flattering headline number, is the difference between a dashboard that looks good and one a finance stakeholder can actually trust.</p>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="wrap prose">
+      <h2>What I'd extend next</h2>
+      <ul>
+        <li>Add a drill-through from the ABC classification into product- or SKU-level detail</li>
+        <li>Surface the LFL calculation logic as a visible note on the page rather than only in the measure definition</li>
+        <li>Add a country/region breakdown alongside the existing currency and fiscal-year slicers</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<nav class="nav-between">
+  <a href="gulfcart.html">← Previous: GulfCart Analysis</a>
+  <a href="tokens-programs.html">Next: Tokens &amp; Programs →</a>
+</nav>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Derriek Xavier · Abu Dhabi / London</span>
+    <span><a href="mailto:derriekx8@gmail.com">derriekx8@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
