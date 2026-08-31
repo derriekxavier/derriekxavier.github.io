@@ -12,14 +12,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://derriekxavier.github.io/projects/gulfcart.html">
 <meta property="og:title" content="GulfCart Analysis - Derriek Xavier">
-<meta property="og:description" content="A four-page Power BI report for a GCC e-commerce business, with a dedicated data quality page tracking every rejected row.">
+<meta property="og:description" content="A four-page Power BI report for a GCC e-commerce dataset, covering revenue, category performance, customer retention, and data quality.">
 <meta property="og:image" content="https://derriekxavier.github.io/assets/og/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GulfCart Analysis - Derriek Xavier">
-<meta name="twitter:description" content="A four-page Power BI report for a GCC e-commerce business, with a dedicated data quality page tracking every rejected row.">
+<meta name="twitter:description" content="A four-page Power BI report for a GCC e-commerce dataset, covering revenue, category performance, customer retention, and data quality.">
 <meta name="twitter:image" content="https://derriekxavier.github.io/assets/og/og-image.png">
 
 <link rel="stylesheet" href="../assets/style.css">
@@ -31,6 +31,7 @@
   <a href="../index.html" class="brand">Derriek Xavier</a>
   <nav>
     <a href="../index.html#work">Work</a>
+    <a href="https://www.linkedin.com/in/derriekxavier/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="mailto:derriekx8@gmail.com">Contact</a>
   </nav>
 </header>
@@ -40,7 +41,7 @@
     <div class="wrap">
       <div class="breadcrumb"><a href="../index.html">Work</a> / GulfCart Analysis</div>
       <h1>GulfCart Analysis</h1>
-      <p class="dek">A four-page Power BI report for a synthetic GCC e-commerce business. Built so the model earns trust before the charts do: every excluded row is accounted for, every segment is defined right on the page.</p>
+      <p class="dek">A four-page Power BI report for a synthetic GCC e-commerce business, covering revenue and margin, category performance, customer retention, and data quality.</p>
 
       <div class="pill-row">
         <span class="pill">Power Query M</span>
@@ -58,29 +59,23 @@
       </dl>
     </div>
 
-    <div class="proj-kpis wrap" style="padding-left:0;padding-right:0;">
-      <div><span class="num">18.82</span><span class="label">Net Revenue (M, AED)</span></div>
-      <div><span class="num">46.45%</span><span class="label">Margin %</span></div>
-      <div><span class="num">2,497</span><span class="label">Rows quarantined with reason codes</span></div>
-      <div><span class="num">6.1%</span><span class="label">Overall 12-month customer retention</span></div>
-    </div>
   </section>
 
   <section class="proj-section">
     <div class="wrap prose">
-      <h2>The brief I set myself</h2>
-      <p>Most portfolio dashboards show a clean number and stop there. I wanted to show the mess underneath too, since real retail data always has orphaned foreign keys, invalid prices, and missing currency codes. Hiding that doesn't make a report more useful, just less honest. So GulfCart has a page most tutorial projects skip: Data Quality.</p>
+      <h2>About the project</h2>
+      <p>The dataset was seeded with common retail data problems: orphaned foreign keys, invalid prices, and missing currency codes. Rather than filtering those out quietly, I built a separate Data Quality page so anyone reading the report can see what was excluded and why.</p>
     </div>
   </section>
 
   <section class="proj-section">
     <div class="wrap">
       <h2>Executive Summary</h2>
-      <p class="prose">The landing page answers what a stakeholder actually opens the report to ask: what did we make, how healthy is the margin, and how did that break down by channel and category. A metric selector lets the same visuals flip between Net Revenue, Gross Revenue, Net Revenue after Returns, Gross Margin, Orders, Units, and Average Order Value.</p>
+      <p class="prose">The landing page covers revenue, margin, and how both break down by channel and category. A metric selector lets the same visuals switch between Net Revenue, Gross Revenue, Net Revenue after Returns, Gross Margin, Orders, Units, and Average Order Value.</p>
 
       <figure>
         <img src="../assets/images/gulfcart-2.png" alt="GulfCart Executive Summary page showing Net Revenue, Margin %, Orders, Net Revenue YoY %, and category breakdown charts">
-        <figcaption>Executive Summary: channel-filterable KPI strip, category revenue, margin, and target attainment, plus a monthly revenue vs target trend</figcaption>
+        <figcaption>Executive Summary: KPI strip filterable by channel, category revenue, margin, and target attainment, plus a monthly revenue vs target trend</figcaption>
       </figure>
 
       <div class="two-col prose">
@@ -88,13 +83,13 @@
           <h3>What's modelled here</h3>
           <ul>
             <li><strong>Net Revenue, Gross Margin, Margin %, Return Rate (Value)</strong> as core measures, all filterable by channel and year</li>
-            <li>A <strong>disconnected measure-selector table</strong> driving the KPI card and trend chart, so one visual covers seven metrics</li>
+            <li>A <strong>disconnected measure-selector table</strong> driving the KPI card and trend chart, so one visual covers several metrics</li>
             <li>A category table combining <strong>Net Revenue, Target, Attainment %, Margin %, and Return Rate</strong> for quick scanning</li>
           </ul>
         </div>
         <div>
           <h3>Why it's built this way</h3>
-          <p>A metric-selector pattern (bind a slicer to a disconnected table, then <code>SWITCH</code> on the selected value inside one measure) stops the report sprawling into a dozen near-identical charts. It's the same trick I used in the BI Gauntlet build, reused once I knew it worked.</p>
+          <p>The metric selector binds a slicer to a disconnected table, then uses <code>SWITCH</code> on the selected value inside a single measure. This avoids building a separate chart for every metric. I used the same approach in the Financial Overview project.</p>
         </div>
       </div>
     </div>
@@ -103,53 +98,53 @@
   <section class="proj-section">
     <div class="wrap">
       <h2>Category &amp; Product</h2>
-      <p class="prose">Drills into where margin is actually being won or lost, by category and by return behaviour, which quietly eats into margin in ways a top-line revenue number won't show.</p>
+      <p class="prose">Breaks margin down by category and by return behaviour, which affects margin in ways the top-line revenue number does not show.</p>
 
       <figure>
         <img src="../assets/images/gulfcart-3.png" alt="GulfCart Category and Product page showing Net Revenue by category, target variance, margin over units sold, and return rate by category">
-        <figcaption>Category &amp; Product: target variance by category, margin % against units sold, and return rate by category, with an "Unknown" category kept rather than dropped</figcaption>
+        <figcaption>Category &amp; Product: target variance by category, margin % against units sold, and return rate by category</figcaption>
       </figure>
 
-      <p class="prose">Electronics and Fashion carry the biggest revenue share, but Sports has the widest negative target variance and the highest return rate, the kind of gap a single blended margin number would hide. Order lines that couldn't be matched to a product sit under an <strong>Unknown</strong> category with their revenue kept intact, following the Kimball "unknown member" pattern instead of just excluding them.</p>
+      <p class="prose">Electronics and Fashion have the largest revenue share, while Sports shows the widest negative target variance and the highest return rate. A single blended margin number would not show that difference. Order lines that could not be matched to a product are grouped under an <strong>Unknown</strong> category with their revenue kept in the totals, using the Kimball unknown member pattern rather than excluding them.</p>
     </div>
   </section>
 
   <section class="proj-section">
     <div class="wrap">
       <h2>Customer</h2>
-      <p class="prose">RFM segmentation and a full month-by-month cohort retention matrix, because "new vs returning revenue" alone doesn't tell you if the business is actually keeping customers.</p>
+      <p class="prose">RFM segmentation and a month-by-month cohort retention matrix. New versus returning revenue alone does not show whether the business is retaining customers over time.</p>
 
       <figure>
         <img src="../assets/images/gulfcart-4.png" alt="GulfCart Customer page showing RFM segments, a customer retention cohort heatmap by year and month since acquisition, and new vs returning customer revenue trend">
-        <figcaption>Customer: RFM segment distribution, a cohort retention heatmap (2022 to 2025, month 0 through 12+), and new vs returning revenue by month</figcaption>
+        <figcaption>Customer: RFM segment distribution, a cohort retention heatmap by acquisition period, and new vs returning revenue by month</figcaption>
       </figure>
 
-      <p class="prose">RFM segments are scored at 180 days recency, 5 orders frequency, and AED 30,000 monetary value, thresholds written right on the page instead of buried in a measure someone would need to reverse-engineer. The cohort table tracks retention for every acquisition year and quarter against every month after, which is what actually shows whether retention is improving year over year (2024 and 2025 cohorts consistently beat 2022's, month for month).</p>
+      <p class="prose">The RFM scoring thresholds are written directly on the page rather than left inside a measure, so anyone reading the report can see how segments were defined. The cohort table tracks retention for each acquisition year and quarter against the months that follow, which shows whether retention is improving across cohorts.</p>
     </div>
   </section>
 
   <section class="proj-section">
     <div class="wrap">
       <h2>Data Quality</h2>
-      <p class="prose">This is the page I'm most glad I built. 2,497 rows got excluded from the model during cleaning, and every one carries a reason code instead of just disappearing.</p>
+      <p class="prose">Rows excluded during cleaning are recorded with a reason code rather than dropped silently, so the exclusions are visible in the report itself.</p>
 
       <figure>
         <img src="../assets/images/gulfcart-1.png" alt="GulfCart Data Quality page showing rejected records by reason code across source tables, with a breakdown table and bar chart of reject reasons">
-        <figcaption>Data Quality: rejected records broken down by reason code and source table, with unknown-channel, unknown-product, and unknown-customer counts tracked separately</figcaption>
+        <figcaption>Data Quality: rejected records by reason code and source table, with unknown channel, product, and customer counts tracked separately</figcaption>
       </figure>
 
-      <h3 class="prose">What was rejected, and why</h3>
+      <h3 class="prose">Types of rejection tracked</h3>
       <ul class="prose">
-        <li><strong>1,038 rows:</strong> orphaned order IDs referencing an order that wasn't in the orders table</li>
-        <li><strong>836 rows:</strong> invalid quantities or unit prices</li>
-        <li><strong>407 orders:</strong> missing currency codes or dates that wouldn't parse</li>
-        <li><strong>177 returns:</strong> invalid return dates, or returns dated before their order</li>
-        <li><strong>78 tier-history rows:</strong> invalid validity date ranges</li>
+        <li>Orphaned order IDs referencing an order not present in the orders table</li>
+        <li>Invalid quantities or unit prices</li>
+        <li>Missing currency codes, or dates that could not be parsed</li>
+        <li>Invalid return dates, or returns dated before their order</li>
+        <li>Tier history records with invalid validity date ranges</li>
       </ul>
-      <p class="prose">Separately, <strong>810 order lines</strong> couldn't be matched to a product and <strong>563 lines across 258 orders</strong> couldn't be matched to a customer. Those weren't excluded, just kept under an unknown-member key so their revenue stays in the totals. Dropping them would've quietly understated revenue for a reason that has nothing to do with the business.</p>
+      <p class="prose">Order lines that could not be matched to a product or customer are handled differently. Rather than excluding them, they are kept under an unknown member key so their revenue stays in the totals, since dropping them would understate revenue for a reason unrelated to the business.</p>
 
       <h3 class="prose">Power Query approach</h3>
-      <p class="prose">Each source table gets validated on ingest, and failing rows get routed to a rejects table with a reason code rather than filtered out silently. That reason code is what drives the chart on this page, so the report is a direct read of what the transformation layer actually did.</p>
+      <p class="prose">Each source table is validated on ingest, and failing rows are routed to a rejects table with a reason code rather than filtered out. That reason code drives the chart on this page, so the report reflects what the transformation step actually did.</p>
     </div>
   </section>
 
@@ -157,8 +152,8 @@
     <div class="wrap prose">
       <h2>What I'd extend next</h2>
       <ul>
-        <li>Add a reconciliation KPI (rejected-row value as a percentage of total order value) to tie the data-quality page back to the executive summary</li>
-        <li>Push the RFM scoring thresholds into parameters so they can be tuned without editing DAX</li>
+        <li>Add a reconciliation measure comparing rejected value against total order value, linking the Data Quality page back to the Executive Summary</li>
+        <li>Move the RFM scoring thresholds into parameters so they can be changed without editing DAX</li>
         <li>Add a returns-reason breakdown alongside the existing return-rate visuals</li>
       </ul>
     </div>
@@ -167,13 +162,13 @@
 
 <nav class="nav-between">
   <a href="../index.html">← All projects</a>
-  <a href="bi-gauntlet.html">Next: BI Gauntlet →</a>
+  <a href="bi-gauntlet.html">Next: Financial Overview →</a>
 </nav>
 
 <footer class="site-footer">
   <div class="wrap">
     <span>Derriek Xavier · Abu Dhabi / London</span>
-    <span><a href="mailto:derriekx8@gmail.com">derriekx8@gmail.com</a></span>
+    <span><a href="https://www.linkedin.com/in/derriekxavier/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:derriekx8@gmail.com">derriekx8@gmail.com</a></span>
   </div>
 </footer>
 

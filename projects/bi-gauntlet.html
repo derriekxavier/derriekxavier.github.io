@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BI Gauntlet: Financial Overview - Derriek Xavier</title>
+<title>Financial Overview - Derriek Xavier</title>
 
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32">
@@ -11,15 +11,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://derriekxavier.github.io/projects/bi-gauntlet.html">
-<meta property="og:title" content="BI Gauntlet: Financial Overview - Derriek Xavier">
-<meta property="og:description" content="A scored Power BI assignment: one executive financial page covering revenue trend, YoY growth, and ABC classification.">
+<meta property="og:title" content="Financial Overview - Derriek Xavier">
+<meta property="og:description" content="A single-page Power BI financial report covering revenue against target, year-over-year growth, and ABC revenue classification.">
 <meta property="og:image" content="https://derriekxavier.github.io/assets/og/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BI Gauntlet: Financial Overview - Derriek Xavier">
-<meta name="twitter:description" content="A scored Power BI assignment: one executive financial page covering revenue trend, YoY growth, and ABC classification.">
+<meta name="twitter:title" content="Financial Overview - Derriek Xavier">
+<meta name="twitter:description" content="A single-page Power BI financial report covering revenue against target, year-over-year growth, and ABC revenue classification.">
 <meta name="twitter:image" content="https://derriekxavier.github.io/assets/og/og-image.png">
 
 <link rel="stylesheet" href="../assets/style.css">
@@ -31,6 +31,7 @@
   <a href="../index.html" class="brand">Derriek Xavier</a>
   <nav>
     <a href="../index.html#work">Work</a>
+    <a href="https://www.linkedin.com/in/derriekxavier/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="mailto:derriekx8@gmail.com">Contact</a>
   </nav>
 </header>
@@ -38,9 +39,9 @@
 <main id="main">
   <section class="proj-hero">
     <div class="wrap">
-      <div class="breadcrumb"><a href="../index.html">Work</a> / BI Gauntlet</div>
-      <h1>BI Gauntlet: Financial Overview</h1>
-      <p class="dek">A scored Power BI assignment from my manager at Lenador Systems: build one executive financial page, no room for a weak measure to hide behind three good ones.</p>
+      <div class="breadcrumb"><a href="../index.html">Work</a> / Financial Overview</div>
+      <h1>Financial Overview</h1>
+      <p class="dek">A Power BI financial report built as an assignment at Lenador Systems, covering revenue performance against target, year-over-year growth, and where revenue is concentrated.</p>
 
       <div class="pill-row">
         <span class="pill">Metric Selector Pattern</span>
@@ -51,33 +52,27 @@
       </div>
 
       <dl class="meta-row">
-        <div><dt>CONTEXT</dt><dd>Assignment set by manager, scored against a rubric</dd></div>
-        <div><dt>SCOPE</dt><dd>Single-page executive financial report</dd></div>
+        <div><dt>CONTEXT</dt><dd>Assignment set by manager at Lenador Systems</dd></div>
+        <div><dt>SCOPE</dt><dd>Single-page financial overview report</dd></div>
         <div><dt>CURRENCY</dt><dd>Multi-currency, with a report-level currency toggle</dd></div>
       </dl>
     </div>
 
-    <div class="proj-kpis wrap" style="padding-left:0;padding-right:0;">
-      <div><span class="num">£28.60M</span><span class="label">Net Revenue</span></div>
-      <div><span class="num">77.6%</span><span class="label">Target Attainment</span></div>
-      <div><span class="num">32.2%</span><span class="label">Revenue YoY %</span></div>
-      <div><span class="num">2.0%</span><span class="label">Like-for-like Revenue YoY %</span></div>
-    </div>
   </section>
 
   <section class="proj-section">
     <div class="wrap prose">
-      <h2>Why one page is the harder brief</h2>
-      <p>A multi-page report can bury a weak measure behind three strong ones. One page can't. The rolling average trend, the ABC split, the year-over-year movement, and the target attainment all had to work individually and hold together as a set, since a reviewer sees all of it at once.</p>
+      <h2>What the report shows</h2>
+      <p>The report gives a summary view of financial performance on a single page. It covers how revenue is tracking against target, how it has grown year over year on both a headline and like-for-like basis, how revenue is distributed across product classes, and how the daily revenue trend has moved over time. Filters for currency, fiscal year, and country let the same page be read from different angles.</p>
     </div>
   </section>
 
   <section class="proj-section">
     <div class="wrap">
-      <h2>The page</h2>
+      <h2>The report</h2>
       <figure>
         <img src="../assets/images/gauntlet-1.png" alt="BI Gauntlet Financial Overview page showing Net Revenue, Attainment %, Revenue YoY %, LFL Revenue YoY %, a 28-day rolling revenue trend, Revenue by ABC class, Revenue YoY % by fiscal year, and Net Revenue vs Target by fiscal year">
-        <figcaption>Financial Overview: metric selector, 28-day rolling revenue trend, ABC revenue classification, and net revenue vs target by fiscal year</figcaption>
+        <figcaption>Financial Overview: metric selector, rolling revenue trend, ABC revenue classification, and net revenue against target by fiscal year</figcaption>
       </figure>
 
       <div class="two-col prose">
@@ -85,19 +80,19 @@
           <h3>What's on it</h3>
           <ul>
             <li>A <strong>metric selector</strong> that switches the KPI card and trend line between Revenue YoY %, LFL Revenue YoY %, Net Revenue, and Attainment %</li>
-            <li>A <strong>28-day rolling average</strong> trend, smoothing daily noise without hiding the underlying shape</li>
-            <li><strong>ABC classification</strong> of revenue by class (A: 69.5%, B: 20.4%, C: 10.2%), a Pareto-style view of where revenue actually concentrates</li>
-            <li><strong>Net Revenue vs Target</strong> by fiscal year, next to Revenue YoY % by fiscal year, so growth and attainment read together</li>
+            <li>A <strong>28-day rolling average</strong> trend, which smooths daily variation while keeping the overall shape of the series visible</li>
+            <li><strong>ABC classification</strong> of revenue by class, showing how much of total revenue each class accounts for</li>
+            <li><strong>Net Revenue against Target</strong> by fiscal year, shown next to Revenue YoY % by fiscal year so growth and attainment can be read together</li>
           </ul>
         </div>
         <div>
           <h3>The metric-selector technique</h3>
-          <p>A disconnected table lists the available metrics, and a slicer against that table feeds one measure that switches its calculation with <code>SWITCH</code>. One visual, one measure, no duplicated pages per metric. I reused and extended this pattern in the GulfCart build afterward.</p>
+          <p>A disconnected table lists the available metrics, and a slicer against that table feeds one measure that switches its calculation using <code>SWITCH</code>. This means one visual and one measure instead of a separate chart per metric. I used the same approach again in the GulfCart project.</p>
         </div>
       </div>
 
       <h3 class="prose">Like-for-like vs headline growth</h3>
-      <p class="prose">Headline Revenue YoY sits at 32.2%, but LFL Revenue YoY, which strips out new stores or channels opened during the period, comes in at 2.0%. Showing both instead of just the flattering headline number is the difference between a dashboard that looks good and one a finance stakeholder can actually trust.</p>
+      <p class="prose">Headline year-over-year growth includes revenue from stores or channels that opened during the period. Like-for-like growth excludes those, so it reflects growth from the existing base only. The two figures differ significantly in this dataset, so the report shows both rather than the headline number alone.</p>
     </div>
   </section>
 
@@ -105,9 +100,9 @@
     <div class="wrap prose">
       <h2>What I'd extend next</h2>
       <ul>
-        <li>Add a drill-through from the ABC classification into product or SKU-level detail</li>
-        <li>Show the LFL calculation logic as a visible note on the page, not just in the measure</li>
-        <li>Add a country or region breakdown alongside the existing currency and fiscal-year slicers</li>
+        <li>Add a drill-through from the ABC classification into product or SKU level detail</li>
+        <li>Show how the like-for-like calculation is defined as a note on the page, not only in the measure</li>
+        <li>Add a country or region breakdown alongside the existing currency and fiscal year filters</li>
       </ul>
     </div>
   </section>
@@ -121,7 +116,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <span>Derriek Xavier · Abu Dhabi / London</span>
-    <span><a href="mailto:derriekx8@gmail.com">derriekx8@gmail.com</a></span>
+    <span><a href="https://www.linkedin.com/in/derriekxavier/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:derriekx8@gmail.com">derriekx8@gmail.com</a></span>
   </div>
 </footer>
 
