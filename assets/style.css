@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
   --paper: #F5F2EC;
@@ -28,10 +28,11 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-weight: 600;
+  font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--ink);
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0;
 }
 
@@ -62,8 +63,8 @@ a:hover { color: var(--rust); }
   margin: 0 auto;
 }
 .site-header .brand {
-  font-family: 'Source Serif 4', serif;
-  font-weight: 600;
+  font-family: 'Archivo', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: 1.15rem;
   color: var(--ink);
   text-decoration: none;
@@ -104,13 +105,15 @@ footer.site-footer a { color: var(--ink-soft); }
 }
 .hero .eyebrow {
   color: var(--teal);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   margin-bottom: 14px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .hero h1 {
   font-size: clamp(2.1rem, 4vw, 3.1rem);
-  max-width: 35ch;
+  max-width: 24ch;
   margin-bottom: 22px;
 }
 .hero p.lede {
@@ -137,7 +140,7 @@ footer.site-footer a { color: var(--ink-soft); }
 }
 .stat-strip div:first-child { border-left: none; padding-left: 0; }
 .stat-strip .num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
   font-size: 1.5rem;
   color: var(--teal);
   display: block;
@@ -180,8 +183,10 @@ footer.site-footer a { color: var(--ink-soft); }
 }
 .proj-card:hover { background: #fff; }
 .proj-card .tag {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: var(--teal);
   margin-bottom: 14px;
 }
@@ -219,8 +224,8 @@ footer.site-footer a { color: var(--ink-soft); }
   padding: 0;
 }
 .about-band .skills-list li {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.82rem;
+  font-weight: 500;
   border: 1px solid rgba(239,237,228,0.35);
   padding: 5px 11px;
   color: #EFEDE4;
@@ -233,8 +238,8 @@ footer.site-footer a { color: var(--ink-soft); }
   border-bottom: 1px solid var(--line-strong);
 }
 .proj-hero .breadcrumb {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 500;
   color: var(--ink-soft);
   margin-bottom: 18px;
 }
@@ -255,8 +260,10 @@ footer.site-footer a { color: var(--ink-soft); }
   font-size: 0.9rem;
 }
 .proj-hero .meta-row dt {
-  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--teal);
   margin-bottom: 4px;
 }
@@ -274,7 +281,7 @@ footer.site-footer a { color: var(--ink-soft); }
 }
 .proj-kpis div:first-child { border-left: none; }
 .proj-kpis .num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
   font-size: 1.4rem;
   color: var(--rust);
   display: block;
@@ -305,8 +312,8 @@ figure img {
   border: 1px solid var(--line-strong);
 }
 figcaption {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
+  font-style: italic;
   color: var(--ink-soft);
   margin-top: 8px;
 }
@@ -316,6 +323,7 @@ figcaption {
   color: #E7E4D9;
   padding: 20px 22px;
   overflow-x: auto;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 0.85rem;
   line-height: 1.65;
   margin: 18px 0 24px;
@@ -324,8 +332,8 @@ figcaption {
 
 .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
 .pill {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.76rem;
+  font-size: 0.78rem;
+  font-weight: 500;
   border: 1px solid var(--line-strong);
   padding: 4px 10px;
   color: var(--teal);
