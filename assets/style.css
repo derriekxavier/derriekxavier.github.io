@@ -79,7 +79,7 @@ a:hover { color: var(--rust); }
 .site-header nav a:hover { color: var(--rust); }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
-.prose { max-width: var(--measure); }
+.prose { max-width: var(--measure); margin-left: 0; margin-right: auto; }
 
 footer.site-footer {
   border-top: 1px solid var(--line-strong);
