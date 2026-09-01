@@ -63,9 +63,9 @@
   </section>
 
   <section class="proj-section">
-    <div class="wrap prose">
+    <div class="wrap">
       <h2>About the project</h2>
-      <p>Lenders need to estimate the chance a borrower will default before approving a loan. Many published models on this dataset report high accuracy figures, but do so by including information that only exists after a loan has been issued, such as repayment history. That inflates results and produces a model that cannot actually be used at the point of decision.</p>
+      <p class="prose">Lenders need to estimate the chance a borrower will default before approving a loan. Many published models on this dataset report high accuracy figures, but do so by including information that only exists after a loan has been issued, such as repayment history. That inflates results and produces a model that cannot actually be used at the point of decision.</p>
       <p>This project restricts the feature set to what is known at origination. The result is a lower headline score than much of the published work on this dataset, but one that reflects what the model could realistically achieve in deployment.</p>
     </div>
   </section>
@@ -159,9 +159,9 @@
   </section>
 
   <section class="proj-section">
-    <div class="wrap prose">
+    <div class="wrap">
       <h2>What I'd do differently</h2>
-      <ul>
+      <ul class="prose">
         <li>Test whether a model trained on earlier cohorts holds up on later ones, rather than using a random split, since the temporal variation in default rates suggests it might not</li>
         <li>Frame the threshold choice around actual cost figures for a missed default versus a rejected good applicant, instead of optimising F1</li>
         <li>Look at calibration rather than ranking alone, since a lender pricing risk needs the predicted probabilities to be meaningful, not just correctly ordered</li>
