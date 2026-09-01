@@ -110,7 +110,7 @@ footer.site-footer a { color: var(--ink-soft); }
 }
 .hero h1 {
   font-size: clamp(2.1rem, 4vw, 3.1rem);
-  max-width: 16ch;
+  max-width: 25ch;
   margin-bottom: 22px;
 }
 .hero p.lede {
